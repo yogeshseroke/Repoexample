@@ -1,0 +1,28 @@
+(1)getting list of id in json api object in java
+
+@GetMapping("/getbyid/{empid}")
+	public Employee findAllEmpByID(@PathVariable int empid)
+	{
+		return empser.getById(empid);
+	}
+
+//-------------------------or------------------------------------
+
+@GetMapping("/getemps/{id}")
+	public Employee getEmpss(@PathVariable int id)
+	{
+		return service.getEmployeesById(id);
+	}
+
+//-------------------------or-------------------------------------
+
+
+@RequestMapping(value = "/book", params = "ids", method = RequestMethod.GET)
+@ResponseBody
+Object getBooksById_params(@RequestParam List<Integer> ids) {
+return "ids=" + ids.toString();
+}    
+
+//--------------------------------------------------------------------------------------
+(2)query for getting list of id in json api object 
+(3)how to move date format to constant in json
